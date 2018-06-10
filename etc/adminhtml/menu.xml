@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<update id="MagePrashant_Core::core" title="MagePrashant Extensions" module="MagePrashant_CheckDelivery" sortOrder="80" resource="MagePrashant_CheckDelivery::menu"/>
+		<add id="MagePrashant_CheckDelivery::checkdelivery" title="Check Delivery" module="MagePrashant_CheckDelivery" sortOrder="60" parent="MagePrashant_Core::core" dependsOnModule="MagePrashant_CheckDelivery" resource="MagePrashant_CheckDelivery::checkdelivery"/>
+		<add id="MagePrashant_CheckDelivery::settings" title="Settings" module="MagePrashant_CheckDelivery" sortOrder="70" resource="MagePrashant_CheckDelivery::config_checkdelivery" action="adminhtml/system_config/edit/section/checkdelivery" parent="MagePrashant_CheckDelivery::checkdelivery"/>
+    </menu>
+</config>

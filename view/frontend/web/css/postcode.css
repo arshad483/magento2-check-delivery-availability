@@ -1,0 +1,44 @@
+.mageprashant-product {
+	float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+    position: relative;
+}
+.mageprashant-product .form-product-postcode{
+	float: left;
+    width: 100%;
+}
+.mageprashant-product .form-product-postcode .postcode-box{
+	float: left;
+    width: 280px;
+    max-width: 100%;
+    position: relative;
+}
+.mageprashant-product .form-product-postcode .postcode-box .postcode-inner{
+	float: left;
+	width: 100%;
+}
+.mageprashant-product .form-product-postcode .postcode-box .postcode-inner .control{
+	position: relative;
+}
+.mageprashant-product .form-product-postcode .postcode-box .postcode-inner .control .input-text{
+	background-image: url(../../MagePrashant_CheckDelivery/images/location.png);
+	float: left;
+	padding-left: 26px;
+	background-repeat: no-repeat;
+	border: none;
+	border-bottom: 2px solid #1979c3;
+}
+.mageprashant-product .form-product-postcode .postcode-box .postcode-check-btn{
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+.mageprashant-product .form-product-postcode .postcode-box .message{
+	clear: both;
+    box-shadow: 0 1px 6px 0 #dedede;
+    width: 280px;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 17px;
+}

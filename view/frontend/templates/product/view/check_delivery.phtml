@@ -1,0 +1,49 @@
+<?php $product = $this->getCurrentProduct() ?>
+<?php if($product && $product->getMageCheckDeliveryEnable() != 2 && $this->getIsActive() == 1): ?>
+	<div class="mageprashant-product">
+		<form class="form-product-postcode" method="post" id="form-product-postcode" novalidate="novalidate">
+			<div class="postcode-box">
+				<div class="postcode-inner">
+					<div class="control">
+						<input type="text" value="" placeholder="<?php echo __('Enter Delivery Postcode') ?>" name="postcode" id="postcode" title="<?php echo __('Postcode') ?>" class="input-text postcode valid" autocomplete="off" data-validate="{'required':true}">
+					</div>
+				</div>
+				<div class="postcode-check-btn">
+					<button class="action primary" type="submit" title="Check" id="button-postcode-check">
+						<span><?php echo __('Check') ?></span>
+					</button>
+				</div>
+				<div class="message"></div>
+			</div>
+		</form>
+	</div>
+<script>
+require([
+	'jquery',
+	'mage/mage'
+], function ($) { 
+	var dataForm = $('#form-product-postcode');
+	dataForm.mage('validation', {});
+	var dataFormMessage = $('#form-product-postcode .message');
+	dataFormMessage.removeClass('success').removeClass('error').hide();
+	$('#button-postcode-check').on('click',function () {
+		var formData = new FormData();
+		formData.append('postcode', $('#form-product-postcode input[name="postcode"]').val());
+		$.ajax({
+			url: '<?php echo $this->getUrl('checkdelivery/postcode/check',['id'=> $product->getId()]) ?>',
+			data: formData,
+			processData: false,
+			contentType: false,
+			showLoader: true,
+			type: 'POST',
+			dataType: 'json',
+			success: function (response) {
+				dataFormMessage.removeClass('success').removeClass('error').hide();
+				dataFormMessage.addClass(response.type).html(response.message).show();
+			}
+		});
+		return false;
+	});
+});
+</script>
+<?php endif; ?>

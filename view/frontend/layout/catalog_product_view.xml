@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MagePrashant_CheckDelivery/css/postcode.css" />
+    </head>
+	<body>
+        <referenceContainer name="product.info.main">
+            <block class="MagePrashant\CheckDelivery\Block\Product\View\CheckDelivery"
+			after="product.info.review"
+			name="mageprashant.checkdelivery"
+			template="product/view/check_delivery.phtml" />
+        </referenceContainer>
+    </body>
+</page>
